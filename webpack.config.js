@@ -31,8 +31,28 @@ module.exports = {
             filename: 'style.css'
         })
     ],
+    devServer: {
+        port: 4200
+    },
     module: {
         rules: [
+              {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    targets: "defaults",
+                    presets: [
+                      ['@babel/preset-env']
+                    ]
+                  }
+                }
+              },
+            {
+                test: /\.html$/,
+                use: ['html-loader']
+            },
             {
                 test: /\.css$/,
                 use: [
@@ -45,10 +65,30 @@ module.exports = {
                 use: [
                 MiniCssExtractPlugin.loader, 
                 'css-loader',
-                'postcss-loader', 
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        postcssOptions: {
+                            plugins: [require('postcss-preset-env')], 
+                        }
+                    }
+                }, 
                 'sass-loader' 
                 ]
-            }
+            },
+            {
+                test: /\.woff2?$/i,
+                type: 'asset/resource',
+                dependency: { not: ['url'] },
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                  name: '[path][name].[ext]',
+                  outputPath: 'images',
+                },
+            },
         ]
     }
 }

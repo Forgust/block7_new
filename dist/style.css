@@ -1,6 +1,6 @@
-/*!******************************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./scss/main.scss ***!
-  \******************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!../node_modules/sass-loader/dist/cjs.js!./scss/main.scss ***!
+  \**********************************************************************************************************************************************************************************/
 @charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -75,8 +75,11 @@ a {
  */
 abbr[title] {
   border-bottom: none; /* 1 */
+  -webkit-text-decoration: underline;
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -335,6 +338,7 @@ template {
   box-sizing: border-box;
   border: 0;
   outline: 0;
+  -webkit-text-decoration: none;
   text-decoration: none;
   list-style: none;
 }
@@ -394,27 +398,27 @@ template {
 }
 
 .round-button--search {
-  background-image: url(2aac5f98a11ccf381f5b.svg);
+  background-image: url(668c3dc2c5d2dec2fffc.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .round-button--call {
-  background-image: url(9538a6b5a60ae35e4ce8.svg);
+  background-image: url(086407146f85a7754c6e.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .round-button--chat {
   content: "";
-  background-image: url(ad838294bfe0a91df5ca.svg);
+  background-image: url(fe416b037480896bfb9a.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .round-button--profile {
   content: "";
-  background-image: url(2351a22f2c67f2e68a32.svg);
+  background-image: url(dcc88d2cdb797d7c6d49.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
