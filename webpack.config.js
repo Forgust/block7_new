@@ -1,23 +1,32 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 
 module.exports = {
-
+    context: path.resolve(__dirname, 'src'),
     entry: {
-        main: './src/js/index.js'
+        main: './js/index.js'
     },
     output: {
         filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './html/index.html',
+            inject: true,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: false
+            }
         }),
-        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'style.css'
         })
@@ -25,12 +34,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.css$/,
                 use: [
-                MiniCssExtractPlugin.loader, // Extract css to separate file
-                'css-loader', // translates CSS into CommonJS
-                'postcss-loader', // parse CSS and add vendor prefixes to CSS rules
-                'sass-loader' // compiles Sass to CSS, using Node Sass by default
+                MiniCssExtractPlugin.loader, 
+                'css-loader',
+                ]
+            },
+            {
+                test: /\.s[ac]ss$/,
+                use: [
+                MiniCssExtractPlugin.loader, 
+                'css-loader',
+                'postcss-loader', 
+                'sass-loader' 
                 ]
             }
         ]
