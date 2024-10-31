@@ -1,4 +1,7 @@
-new Swiper('.main__swiper', {
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+
+const swiper = new Swiper('.brands__swiper', {
   pagination: {
     el: '.swiper-pagination',
     clickTable: true ,
@@ -21,6 +24,7 @@ new Swiper('.main__swiper', {
     }
   },
 });
+
 
 let logoList = document.querySelectorAll('.image-slide');
 let showMoreButton = document.querySelector('.show-more__button');

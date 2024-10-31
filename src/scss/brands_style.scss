@@ -1,41 +1,17 @@
-@font-face {
-  font-family: "TTLakes-Regular";
-    src: 
-      url(/font-style-TTlakes/TTLakes-Regular.eot) format("eot"),
-      url(/font-style-TTlakes/TTLakes-Regular.ttf) format("ttf"),
-      url(/font-style-TTlakes/TTLakes-Regular.woff) format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
 
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: 0;
-  outline: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
-.body {
-  height: 100vh;
-  background-color: #F8F8F8;
-}
-
-.main {
+.brands {
   min-width: 0;
   height: 32%;
 }
 
-.main__table {
+.brands__table {
   display: none;
 }
 
 /* Заголовок/шапка */
 
-.header {
+.brands__header {
   height: 80px;
   width: 100vw;
   background-image: linear-gradient(to right, #F8F8F8 , #FFFFFF );
@@ -56,7 +32,7 @@
 
 /* Свайпер */
 
-.main__swiper {
+.brands__swiper {
   height: 130px;
 }
 
@@ -82,14 +58,14 @@
   border: 2px solid #FF3E79;
   border-radius: 50%;
   background-color: #FFFFFF;
-  background-image: url(/image/dropdown.svg);
+  background-image: url('../img/dropdown.svg');
   background-repeat: no-repeat;
   background-position: center;
   margin: 16px;
   cursor: pointer;
 }
 
-.main .main__swiper .swiper-pagination-bullet {
+.brands .brands__swiper .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   line-height: 12px;
@@ -103,7 +79,7 @@
 
 
 @media (min-width: 768px) {
-  .main__swiper {
+  .brands__swiper {
     display: none;
   }
    
@@ -111,12 +87,12 @@
     padding: 16px 24px;
   }
 
-  .main__table {
+  .brands__table {
     display: block;
     padding: 0 24px;
   }
 
-  .main__slides {
+  .brands__slides {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
@@ -146,7 +122,7 @@
 
   .img-down::before {
     content: '';
-    background-image: url(/image/icon-more.svg);
+    background-image: url('../img/icon-more.svg');
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -166,12 +142,12 @@
     padding: 16px 32px;
   }
 
-  .main__table {
+  .brands__table {
     display: block;
     padding: 0 32px;
   }
 
-  .main__slides {
+  .brands__slides {
     grid-template-columns: repeat(4, 1fr);
   }
 

@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
+const svgToMiniDataURI = require('mini-svg-data-uri');
+const loader = require('sass-loader');
 
 
 module.exports = {
@@ -11,6 +13,7 @@ module.exports = {
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'assets/[hash][ext][query]',
         clean: true,
     },
     optimization: {
@@ -28,7 +31,7 @@ module.exports = {
             }
         }),
         new MiniCssExtractPlugin({
-            filename: 'style.css'
+            filename: '[name].css'
         })
     ],
     devServer: {
@@ -80,15 +83,25 @@ module.exports = {
                 test: /\.woff2?$/i,
                 type: 'asset/resource',
                 dependency: { not: ['url'] },
+                generator: {
+                    filename: 'fonts/[name].[ext]'
+                }
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader',
-                options: {
-                  name: '[path][name].[ext]',
-                  outputPath: 'images',
-                },
+                type: 'asset/resource',
+                dependency: { not: ['url'] },
             },
+            {
+                test: /\.svg$/,
+                type: 'asset/inline',
+                generator: {
+                    dataUrl: content => {
+                      content = content.toString();
+                      return svgToMiniDataURI(content);
+                    }
+                  }
+            }
         ]
     }
 }
