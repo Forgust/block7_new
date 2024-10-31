@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const svgToMiniDataURI = require('mini-svg-data-uri');
-const loader = require('sass-loader');
+
 
 
 module.exports = {
