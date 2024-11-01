@@ -308,6 +308,18 @@ body {
   padding-right: 10px;
 }
 
+.footer {
+  display: grid;
+  // align-items: end;
+}
+
+.footer--text-style {
+  font-family: 'TTLakes-Regular', sans-serif;
+  color: #7E7E82;
+  line-height: 16px;
+  font-size: 14px;
+}
+
 @media (min-width: 768px) {
   .main {
     height: 86vh;

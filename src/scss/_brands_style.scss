@@ -40,7 +40,8 @@
   background-color: #FFFFFF;
   width: 240px;
   height: 72px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   justify-content: space-between;
   align-items: center;
   margin: 16px;
@@ -61,7 +62,6 @@
   background-image: url('../img/dropdown.svg');
   background-repeat: no-repeat;
   background-position: center;
-  margin: 16px;
   cursor: pointer;
 }
 

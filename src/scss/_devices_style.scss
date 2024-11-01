@@ -1,0 +1,32 @@
+.devices__swiper {
+    height: 228px;
+}
+  
+.devices__swiper-slide {
+    padding: 16px;
+}
+  
+.devices-slide {
+    font-family: 'TTLakes-Regular', sans-serif;
+    font-weight: 600;
+    background-color: #FFFFFF;
+    width: 240px;
+    height: 160px;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    display: grid;
+    padding: 16px;
+}
+
+.devices .devices__swiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    background-color: #DDDDDD;
+    margin: 0 6px;
+}
+
+.devices-slide .logo-button {
+    justify-self: end;
+    align-self: end;
+}
