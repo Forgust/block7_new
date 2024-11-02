@@ -13,9 +13,12 @@
 
 .swiper-header {
   height: 80px;
-  width: 100vw;
   background-image: linear-gradient(to right, #F8F8F8 , #FFFFFF );
   border-top: 1px solid #D9FFF5;
+
+    @media (min-width: 768px) {
+      height: 56px;
+    }
 }
 
 .title__text {

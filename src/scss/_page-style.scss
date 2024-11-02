@@ -10,7 +10,7 @@
   list-style: none;
 }
 
-
+// ШАПКА
 .header {
   display: flex;
   height: 88px;
@@ -24,6 +24,7 @@
 .header__left-block {
   display: flex;
 }
+
 
 .header__right-block::after {
   content: "";
@@ -43,6 +44,11 @@
   padding-right: 8px;
 }
 
+.buttons-for-tablet {
+  display: none;
+  padding: 0 24px ;
+  gap: 16px;
+}
 
 .header--icon-margin {
   margin-right: 16px;
@@ -50,117 +56,12 @@
 
 .header__logo {
   background-color: white;
+  cursor: pointer;
 }
-    /* ИКОНКИ */
-
-
-    .round-button {
-      height: 40px;
-      width: 40px;
-      background-color: #FF3E79;;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: 0.5s;
-    }
-    
-    .logo {
-      width: 97px;
-      height: 51px;
-      background-size: 97px 51px;
-      background-position: 100% 100%;
-      margin-left: 0;
-    }
-
-    .round-button--checkstatus {
-      background-image: url('../img/checkstatus_element.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .round-button--repair {
-      background-image: url('../img/repair_element.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .round-button--burger {
-      background-image: url('../img/burger_element.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    
-    .round-button--search {
-      background-image: url('../img/search_element.svg');
-      background-repeat:  no-repeat;
-      background-position: center;
-    }
-    
-    .round-button--call {
-      background-image: url('../img/call_element.svg');
-      background-repeat:  no-repeat;
-      background-position: center;
-    }
-    
-    .round-button--chat {
-      content: "";
-      background-image: url('../img/chat_element_3.svg');
-      background-repeat:  no-repeat;
-      background-position: center;
-    }
-    
-    .round-button--profile {
-      content: "";
-      background-image: url('../img/profile_element.svg');
-      background-repeat:  no-repeat;
-      background-position: center;
-    }
-    
-    .round-button--close::before {
-      content: "";
-      background-color:#FFFFFF;
-      height: 25px;
-      width: 3px;
-      position: relative;
-      display: block;
-      left: 19px;
-      top: 8px;
-      transform: rotate(135deg);
-      border-radius: 2px;
-      transition: 0.4s;
-    }
-    
-    .round-button--close::after {
-      content: "";
-      background-color: #FFFFFF;
-      height: 25px;
-      width: 3px;
-      position: relative;
-      display: block;
-      top: -17px;
-      left: 19px;
-      transform: rotate(45deg);
-      border-radius: 2px;
-      transition: 0.4s;
-    }
-    
-    .aside-main__item::before {
-      content: "";
-      background-color: #41F6D7;
-      width: 4px;
-      height: 32px;
-      position: absolute;
-      display: block;
-      top: auto;
-      border-radius: 2px;
-      opacity: 0;
-      transition: 0.4s;
-      transform: scaleY(0.2);
-    }
+  
+// ОСНОВНАЯ СТРАНИЦА
 
 body {
-  width: 100vw;
-  min-height: 100vh;
-  overflow-x: none;
   background-color: #F8F8F8;
 }
 
@@ -169,12 +70,25 @@ body {
   flex-direction: column;
 }
 
+//ЗАГОЛОВОК
 .main__title-block {
  padding-top: 24px;
- display: flex;
- gap: 3%;
- align-items: center;
- justify-content: space-between;
+}
+
+.main__title {
+  line-height: 40px;
+  margin: 0;
+}
+
+.main__title::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #41F6D7;
+  border-radius: 6px;
+  height: 40px;
+  width: 16px;
+  left: -12px;
 }
 
 .main__buttons {
@@ -184,11 +98,18 @@ body {
 .main__title--style {
   font-size: 28px;
   font-family: "TTLakes-Bold";
-  padding-left: 15px;
+  padding-left: 5%;
 }
 
 .main__title-container {
   display: flex;
+}
+
+.button-for-desktop--style {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-family: "TTLakes-Medium";
 }
 
 .main__buttons a,
@@ -199,12 +120,6 @@ body {
   color: black;
 }
 
-.button-for-desktop--style {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  font-family: "TTLakes-Medium";
-}
 
 .slide-menu {
   display: flex;
@@ -242,6 +157,7 @@ body {
   display: block;
   box-sizing: border-box;
   border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .slide-menu__link:hover {
@@ -267,7 +183,11 @@ body {
   display: flex;
   flex-direction: column; 
   padding: 0 16px;
-  height: 25vh;
+  height: 20vh;
+}
+
+.article__text p:first-child{
+  padding-bottom: 20px;
 }
 
 .article__image {
@@ -279,23 +199,30 @@ body {
   flex-direction: column;
 }
 
-.buttons-for-tablet {
-  display: none;
-}
 
 .article__text--style {
-  font-size: 17px;
+  font-size: 14px;
   font-family: "TTLakes-Regular", sans-serif;
   font-weight: 200;
-  letter-spacing: -0.2px;
-}
-.article__text--style p {
-  margin-bottom: 1em;
+  line-height: 20px;
+  letter-spacing: 0.2px;
 }
 
 .read-more {
-  padding:  0 16px 16px 16px;
   display: flex;
+  padding: 16px;
+}
+
+.read-more__text::before {
+  content: "";
+  background-image: url('../img/icon-more.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 10px;
+  width: 10px;
+  position: relative;
+  display: block;
+  margin-right: 6px;
 }
 
 .read-more__text--style {
@@ -304,13 +231,15 @@ body {
   font-size: 16px;
 }
 
-.read-more img {
-  padding-right: 10px;
-}
+
 
 .footer {
-  display: grid;
-  // align-items: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-top: 1px solid #D9FFF5;
+  height: 120px;
 }
 
 .footer--text-style {
@@ -322,18 +251,17 @@ body {
 
 @media (min-width: 768px) {
   .main {
-    height: 86vh;
+    gap: 24px;
   }
+
   .article__text {
-    height: 50%;
+    height: 25vh;
     padding-top: 5px;
   }
 
   .article__container {
     flex-direction: row;
     flex-wrap: nowrap;
-    height: 50vh;
-    
   }
 
   .article__image {
@@ -344,7 +272,11 @@ body {
   }
 
   .buttons-for-tablet {
-    display: block;
+    display: flex;
+  }
+
+  .header__right-block::after {
+    right: 124px;
   }
 
   .header__logo::before {
@@ -354,7 +286,7 @@ body {
     position: absolute;
     height: 32px;
     width: 2px;
-    left: 84px;
+    left: 75px;
     top: 28px;
   }
   .header__logo {
