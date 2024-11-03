@@ -21,6 +21,7 @@
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
     "dart-sass": "^1.25.0",
+    "exports-loader": "^5.0.0",
     "file-loader": "^6.2.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",

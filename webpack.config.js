@@ -8,7 +8,8 @@ const svgToMiniDataURI = require('mini-svg-data-uri');
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: {
-        main: './js/index.js'
+        main: './js/index.js',
+        brands: './js/brands-script.js'
     },
     output: {
         filename: '[name].[contenthash].js',

@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-new Swiper('.prices__swiper', {
+export default pricesSwiper = new Swiper('.prices__swiper', {
     pagination: {
       el: '.swiper-pagination',
       clickTable: true ,

@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-new Swiper('.devices__swiper', {
+export default devicesSwiper = new Swiper('.devices__swiper', {
     pagination: {
       el: '.swiper-pagination',
       clickTable: true ,
@@ -21,7 +21,12 @@ new Swiper('.devices__swiper', {
   
       600: {
         slidesPerView: 2.4,
+      },
+
+      768: {
+        slidesPerView: 3,
       }
     },
   });
-  
+
+
