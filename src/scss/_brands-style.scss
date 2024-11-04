@@ -1,14 +1,4 @@
 
-
-.brands {
-  min-width: 0;
-  height: 32%;
-}
-
-.brands__table {
-  display: none;
-}
-
 /* Заголовок/шапка */
 
 .swiper-header {
@@ -23,6 +13,7 @@
 
 .title__text {
   padding: 16px;
+  
 }
 
 .title__text--style {
@@ -33,29 +24,35 @@
   color: #7E7E82;
 }
 
+
+
+
+
+
 /* Свайпер */
 
-.brands__swiper {
-  height: 130px;
-}
+// .brands__swiper {
+//   height: 130px;
+// }
 
-.image-slide {
-  background-color: #FFFFFF;
-  width: 240px;
-  height: 72px;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  justify-content: space-between;
-  align-items: center;
-  margin: 16px;
-  border: 1px solid #EAEAEA;
-  border-radius: 8px;
-}
+// .image-slide {
+//   background-color: #FFFFFF;
+//   width: 240px;
+//   height: 72px;
+//   display: grid;
+//   grid-template-columns: 3fr 1fr;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin: 16px;
+//   border: 1px solid #EAEAEA;
+//   border-radius: 8px;
+// }
 
-.image-slide img { 
-  margin-left: 16px;
-}
+// .image-slide img { 
+//   margin-left: 16px;
+// }
 
+// КнопОчка для брендов и видов техники
 .logo-button {
   width: 40px;
   height: 40px;
@@ -68,7 +65,36 @@
   cursor: pointer;
 }
 
-.brands .brands__swiper .swiper-pagination-bullet {
+.brands__swiper {
+  overflow: hidden;
+  width: 100%;
+  padding: 16px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.brands__swiper-wrapper {
+  display: flex;
+}
+
+.brands-slide {
+  flex-shrink: 0;
+
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+  height: 72px;
+  padding: 16px;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  font-family: 'TTLakes-medium', sans-serif;
+  font-weight: 500;
+}
+
+
+.swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   line-height: 12px;
@@ -76,11 +102,13 @@
   margin: 0 6px;
 }
 
+// Скрытень
+
 .hiden {
   display: none;
 }
 
-
+// И тут появляется он
 @media (min-width: 768px) {
   .brands__swiper {
     display: none;
