@@ -103,12 +103,13 @@
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 15px;  
 }
 
 .commercial-offer__text {
     font-family: 'TTLakes-Regular', sans-serif;
     line-height: 20px;
+    font-size: 14px;
 }
 
 .commercial-offer__link {

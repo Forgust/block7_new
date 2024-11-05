@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-let devicesSwiper = new Swiper('.devices__swiper', {
+const devicesSwiper = new Swiper('.devices__swiper', {
   wrapperClass: 'devices__swiper-wrapper',
   slideClass: 'devices-slide',
   slidesPerView: 'auto',
@@ -11,5 +11,6 @@ let devicesSwiper = new Swiper('.devices__swiper', {
     clickTable: true,
   },
 });
+  
 
-  export default devicesSwiper;
+export default devicesSwiper;

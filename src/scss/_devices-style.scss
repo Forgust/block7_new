@@ -5,15 +5,27 @@
     padding: 16px;
     padding-bottom: 50px;
     position: relative;
+    @media (min-width: 768px) {
+        padding-bottom: 8px;
+    }
 }
 
 .devices__swiper-wrapper {
     display: flex;
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 16px;
+        padding-bottom: 24px;
+        // justify-items: center;
+      }
+      @media (min-width: 1440px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
 }
 
 .devices-slide {
     flex-shrink: 0;
-
     background-color: white;
     display: grid;
     width: 240px;

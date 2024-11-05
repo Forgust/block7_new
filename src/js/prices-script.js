@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-let pricesSwiper = new Swiper('.prices__swiper', {
+const pricesSwiper = new Swiper('.prices__swiper', {
   wrapperClass: 'prices__swiper-wrapper',
   slideClass: 'prices-slide',
   slidesPerView: 'auto',
@@ -11,5 +11,5 @@ let pricesSwiper = new Swiper('.prices__swiper', {
     clickTable: true,
   },
 });
-  
-  export default pricesSwiper;
+
+export default pricesSwiper;

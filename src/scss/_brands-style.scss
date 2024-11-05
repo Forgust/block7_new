@@ -25,33 +25,6 @@
 }
 
 
-
-
-
-
-/* Свайпер */
-
-// .brands__swiper {
-//   height: 130px;
-// }
-
-// .image-slide {
-//   background-color: #FFFFFF;
-//   width: 240px;
-//   height: 72px;
-//   display: grid;
-//   grid-template-columns: 3fr 1fr;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin: 16px;
-//   border: 1px solid #EAEAEA;
-//   border-radius: 8px;
-// }
-
-// .image-slide img { 
-//   margin-left: 16px;
-// }
-
 // КнопОчка для брендов и видов техники
 .logo-button {
   width: 40px;
@@ -65,21 +38,36 @@
   cursor: pointer;
 }
 
+// свайпер
+
 .brands__swiper {
   overflow: hidden;
   width: 100%;
   padding: 16px;
   padding-bottom: 50px;
   position: relative;
+  @media (min-width: 768px) {
+    padding-bottom: 8px;
+  }
 }
 
 .brands__swiper-wrapper {
   display: flex;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 16px;
+    padding-bottom: 24px;
+    // justify-items: center;
+  }
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
 }
 
 .brands-slide {
   flex-shrink: 0;
-
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -89,8 +77,6 @@
   padding: 16px;
   border: 1px solid #EAEAEA;
   border-radius: 8px;
-  font-family: 'TTLakes-medium', sans-serif;
-  font-weight: 500;
 }
 
 
@@ -100,90 +86,52 @@
   line-height: 12px;
   background-color: #DDDDDD;
   margin: 0 6px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
-// Скрытень
+
+.show-more {
+  display: flex;
+}
+
+.show-more__button {
+  background-color: #F8F8F8;
+  font-family: 'TTLakes-Regular';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.img-down::before {
+  content: '';
+  background-image: url('../img/icon-more.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  top: 4px;
+}
+
+.img-down.reverse::before {
+  transform: scale(-1);
+}
+
 
 .hiden {
   display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
 }
 
-// И тут появляется он
-@media (min-width: 768px) {
-  .brands__swiper {
+.hiden-slide {
+  @media (min-width: 768px) {
     display: none;
   }
-   
-  .title__text {
-    padding: 16px 24px;
-  }
-
-  .brands__table {
-    display: block;
-    padding: 0 24px;
-  }
-
-  .brands__slides {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    column-gap: 24px;
-    row-gap: 16px;
-    padding: 24px 0;
-  }
-
-  .image-slide {
-    margin: 0;
-    width: 224px;
-  }
-
-
-  .show-more {
-    display: flex;
-  }
-
-  .show-more__button {
-    background-color: #F8F8F8;
-    font-family: 'TTLakes-Regular';
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    cursor: pointer;
-  }
-
-  .img-down::before {
-    content: '';
-    background-image: url('../img/icon-more.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    top: 4px;
-  }
-
-  .img-down.reverse::before {
-    transform: scale(-1);
-  }
 }
-
-@media (min-width: 1120px) {
-  .title__text {
-    padding: 16px 32px;
-  }
-
-  .brands__table {
-    display: block;
-    padding: 0 32px;
-  }
-
-  .brands__slides {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .desctop {
-    display: flex;
-  }
-}
-
