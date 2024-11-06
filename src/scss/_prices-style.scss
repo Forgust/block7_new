@@ -4,13 +4,19 @@
     overflow: hidden;
     width: 100%;
     padding: 16px;
-    padding-left: 8px;
     padding-bottom: 50px;
     position: relative;
 }
 
 .prices__swiper-wrapper {
-    display: flex;
+    @media (max-width: 768px) {
+        display: flex;
+        column-gap: 0;
+    }
+}
+
+.prices__swiper .swiper-slide {
+    width: 260px;
 }
 
 .prices-slide {

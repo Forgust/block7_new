@@ -2,21 +2,69 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
+window.addEventListener('DOMContentLoaded', () => {
+  const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
+    let swiper;
+    breakpoint = window.matchMedia(breakpoint);
 
+    const enableSwiper = function(className, settings) {
+      swiper = new Swiper(className, settings);
 
-function mobileSlider() {
-    for (let y = 0; y < swipers.length; y++) {
-        if (window.innerWidth < 768 && swipersClassList[y].dataset.mobile == 'false') {
-            swipers[y].update;
-            swipersClassList[y].dataset.mobile = 'true';
-            console.log('Свайпер ' + swipers[y] + ' прошел апдейт и теперь ' + swipersClassList[y].dataset.mobile)
-        } else if (window.innerWidth >= 768) {
-            swipersClassList[y].dataset.mobile = 'false';
-            console.log('Свайпер ' + swipers[y] + swipersClassList[y].dataset.mobile);
-          if (swipersClassList[y].classList.contains('swiper-initialized')) {
-            swipers[y].destroy();
-            console.log('Свайпер ' + swipers[y] + ' уничтожился и теперь ' + swipersClassList[y].dataset.mobile)
-          };
-        };
-      };
+      if (callback) {
+        callback(swiper)
+      }
+
     };
+
+    const checker = function () {
+      if (breakpoint.matches) {
+        return enableSwiper(swiperClass, swiperSettings);
+      } else {
+        if (swiper !== undefined) swiper.destroy(true, true);
+        return;
+      }
+    };
+
+    breakpoint.addEventListener('change', checker);
+    checker();
+  };
+
+  resizableSwiper(
+    '(max-width: 768px)',
+    '.brands__swiper',
+    {
+      spaceBetween: 16,
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    }
+  );
+
+  resizableSwiper(
+    '(max-width: 768px)',
+    '.devices__swiper',
+    {
+      spaceBetween: 16,
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    }
+  );
+
+  resizableSwiper(
+    '(max-width: 768px)',
+    '.prices__swiper',
+    {
+      spaceBetween: 16,
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    }
+  );
+});

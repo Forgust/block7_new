@@ -1,17 +1,18 @@
 
 .devices__swiper {
-    overflow: hidden;
-    width: 100%;
     padding: 16px;
     padding-bottom: 50px;
-    position: relative;
     @media (min-width: 768px) {
         padding-bottom: 8px;
     }
 }
 
 .devices__swiper-wrapper {
-    display: flex;
+    @media (max-width: 768px) {
+        display: flex;
+        column-gap: 0;
+      }
+
     @media (min-width: 768px) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -22,6 +23,10 @@
       @media (min-width: 1440px) {
         grid-template-columns: repeat(4, 1fr);
       }
+}
+
+.devices__swiper .swiper-slide {
+    width: 240px;
 }
 
 .devices-slide {

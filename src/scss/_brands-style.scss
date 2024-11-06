@@ -41,29 +41,29 @@
 // свайпер
 
 .brands__swiper {
-  overflow: hidden;
-  width: 100%;
   padding: 16px;
   padding-bottom: 50px;
-  position: relative;
   @media (min-width: 768px) {
     padding-bottom: 8px;
   }
 }
 
 .brands__swiper-wrapper {
-  display: flex;
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 16px;
     padding-bottom: 24px;
-    // justify-items: center;
+    justify-items: center;
   }
   @media (min-width: 1440px) {
     grid-template-columns: repeat(4, 1fr);
   }
 
+}
+
+.brands__swiper .swiper-slide {
+  width: 240px;
 }
 
 .brands-slide {
@@ -94,7 +94,8 @@
 
 
 .show-more {
-  display: flex;
+  position: relative;
+  left: -40px;
 }
 
 .show-more__button {
