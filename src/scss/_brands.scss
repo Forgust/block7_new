@@ -56,7 +56,7 @@
     row-gap: 16px;
     justify-items: center;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1120px) {
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -98,8 +98,9 @@
 
 
 .show-more {
+  grid-column: 1/2;
   justify-self: start;
-  margin-left: 5px;
+  margin-left: 50px;
 }
 
 .show-more__button {

@@ -7,7 +7,6 @@
     padding-bottom: 50px;
     position: relative;
     @media (min-width: 768px) {
-        width: 100vw;
         padding: 0 24px;
     }
 }
@@ -61,6 +60,7 @@
         position: absolute;
         bottom: 1px;
         left: 16px;
+        
     }
 }
 

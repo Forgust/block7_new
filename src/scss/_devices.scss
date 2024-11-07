@@ -20,7 +20,7 @@
         row-gap: 16px;
         justify-items: center;
       }
-      @media (min-width: 1440px) {
+      @media (min-width: 1120px) {
         grid-template-columns: repeat(4, 1fr);
       }
 }
