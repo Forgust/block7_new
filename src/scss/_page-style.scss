@@ -120,7 +120,7 @@ body {
   color: black;
 }
 
-
+// слайдер
 .slide-menu {
   display: flex;
   overflow-x: auto;
@@ -166,10 +166,13 @@ body {
   background-color: white;
 }
 
+// блок с инфой
+
 .main__article {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 16px;
 }
 
 .article__container {
@@ -183,7 +186,7 @@ body {
   display: flex;
   flex-direction: column; 
   padding: 0 16px;
-  height: 20vh;
+  height: 8em;
 }
 
 .article__text p:first-child{
@@ -254,8 +257,17 @@ body {
     gap: 24px;
   }
 
+  .main__article {
+    padding: 0 24px;
+  }
+
+  .article__text-container {
+    gap: 10px;
+  }
+
   .article__text {
-    height: 25vh;
+    height: 10.5em;
+    padding: 0;
     padding-top: 5px;
   }
 
@@ -300,6 +312,26 @@ body {
   }
 }
 
+.footer {
+  padding: 24px;
+  flex-direction: row;
+  height: 100px;
+  
+}
+
+.footer__link {
+  width: 33%;
+  height: 80%;
+}
+
+.footer__link.author {
+  justify-items: flex-start;
+  align-content: center;
+}
+
+.footer__link.oferta {
+  text-align: right;
+}
 
 @media (min-width: 1120px) {
   .header {

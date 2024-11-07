@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   resizableSwiper(
-    '(max-width: 768px)',
+    '(max-width: 767px)',
     '.brands__swiper',
     {
       spaceBetween: 16,
@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
   );
 
   resizableSwiper(
-    '(max-width: 768px)',
+    '(max-width: 767px)',
     '.devices__swiper',
     {
       spaceBetween: 16,
@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
   );
 
   resizableSwiper(
-    '(max-width: 768px)',
+    '(max-width: 767px)',
     '.prices__swiper',
     {
       spaceBetween: 16,

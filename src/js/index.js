@@ -2,9 +2,36 @@ import '../scss/main.scss';
 import '../html/index.html';
 import './swipers';
 
-let showMoreButton = document.querySelector('.show-more__button');
+let brandsMoreButton = document.querySelector('.brands__button');
+let devicesMoreButton = document.querySelector('.devices__button');
 
-    
+let brandsList = document.querySelectorAll('.brands-slide');
+let devicesList = document.querySelectorAll('.devices-slide');
+
+
+
+function showMore (slidsList, button) {
+  for (let i = 0; i < slidsList.length; i++) {
+    if (slidsList[i].classList.contains('hiden-slide')) {
+      slidsList[i].classList.remove('hiden-slide');
+      slidsList[i].classList.add('not-hiden');
+      button.textContent = 'Скрыть';
+    } else if (slidsList[i].classList.contains('not-hiden')) {
+      slidsList[i].classList.add('hiden-slide');
+      slidsList[i].classList.remove('not-hiden');
+      button.textContent = 'Показать все';
+    };
+  };
+  button.classList.toggle('reverse');
+}
+
+brandsMoreButton.onclick = function () {
+  showMore(brandsList, brandsMoreButton);
+}
+
+devicesMoreButton.onclick = function () {
+  showMore(devicesList, devicesMoreButton);
+}
 
 function desctopHiden () {
     for (let i = 0; i < slidsList.length; i++) {
@@ -16,24 +43,6 @@ function desctopHiden () {
             slidsList[i].classList.add('hiden-slide');
       };
     };
-};
-   
-
-
-
-showMoreButton.onclick = function () {
-    for (let i = 0; i < slidsList.length; i++) {
-      if (slidsList[i].classList.contains('hiden-slide')) {
-        slidsList[i].classList.remove('hiden-slide');
-        slidsList[i].classList.add('not-hiden');
-        showMoreButton.textContent = 'Скрыть';
-      } else if (slidsList[i].classList.contains('not-hiden')) {
-        slidsList[i].classList.add('hiden-slide');
-        slidsList[i].classList.remove('not-hiden');
-        showMoreButton.textContent = 'Показать все';
-      };
-    };
-    showMoreButton.classList.toggle('reverse');
 };
 
 

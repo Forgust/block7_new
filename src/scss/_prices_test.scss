@@ -8,8 +8,7 @@
     position: relative;
     @media (min-width: 768px) {
         width: 100vw;
-        padding: 24px;
-        padding-bottom: 0;
+        padding: 0 24px;
     }
 }
 
@@ -44,7 +43,24 @@
     font-family: 'TTLakes-medium', sans-serif;
     font-weight: 500;
     @media (min-width: 768px) {
+        grid-template-columns: 4fr 1fr 1fr;
         width: 100%;
+        height: 64px;
+        border: none;
+        border-radius: 0;
+        align-items: center;
+    }
+}
+
+.prices .swiper-slide:not(:first-of-type,:last-of-type)::after {
+    @media (min-width: 768px) {
+        content: "";
+        width: 95%;
+        height: 2px;
+        background-color: #EAEAEA;
+        position: absolute;
+        bottom: 1px;
+        left: 16px;
     }
 }
 
@@ -55,6 +71,8 @@
     background-color: #DDDDDD;
     margin: 0 6px;
 }
+
+
 
 // КНОПОЧКИ
 .price-button {
@@ -70,7 +88,14 @@
     cursor: pointer;
     overflow: hidden;
     position: relative;
+
+    @media (min-width: 768px) {
+        grid-column: end;
+        align-self: center;
+    }
 }
+
+
 
 .price-button p{
     transform: translateX(-10px);
@@ -94,12 +119,24 @@
     margin-bottom: 4px;
 }
 
+.service-container>p:first-of-type:not(.service__name--header) {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
 .service-container:first-child {
     grid-column: span 2;
+    @media (min-width: 768px) {
+        grid-column: 1;
+    }
 }
 
 .service-container:nth-child(2) {
     grid-column: span 2;
+    @media (min-width: 768px) {
+        grid-column: 2;
+    }
 }
 
 .prices p {
@@ -112,6 +149,15 @@
     font-size: 14px;
 } 
 
+.prices-slide--header {
+    background-color: #F8F8F8;
+    @media (min-width: 768px) {
+        grid-template-columns: 4fr repeat(3, 1fr);
+        align-items: end;
+    }
+}
+
+
 .service__text {
     line-height: 18px;
     font-size: 14px;
@@ -120,11 +166,15 @@
 
 // Халява
 .commercial-offer {
-    padding: 16px;
-    padding-top: 0;
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
-    gap: 15px;  
+    gap: 15px;
+    @media (min-width: 768px) {
+        padding: 0 24px;
+        width: 60%;
+        padding-bottom: 47px;
+    }
 }
 
 .commercial-offer__text {
