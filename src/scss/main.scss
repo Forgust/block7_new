@@ -6,10 +6,15 @@
 @use 'devices';
 @use 'prices';
 @use 'side-menu';
+@use 'feedback';
 
+.body {
+    @media (min-width: 1360px) {
+        display: flex;
+    }
+}
 
 .content {
-    display: block;
     opacity: 1;
 }
 
@@ -19,11 +24,24 @@
 
 .side-menu--left {
     z-index: 2;
-    display: block;
     position: fixed;
     transform: translateX(-600px);
+    transition: 1s;
+    @media (min-width: 1360px) {
+        transform: translateX(0);
+        position: relative;
+    }
 }
 
 .side-menu--left.open {
+    transform: translateX(0);
+}
+
+.feedback {
     transform: translateX(600px);
+}
+
+.feedback.open {
+    box-shadow: 5px 0 40px 0 black;
+    transform: translateX(0);
 }

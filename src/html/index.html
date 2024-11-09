@@ -6,6 +6,7 @@
     <title>block7</title>
   </head>
   <body class="body">
+    
     <div class="side-menu side-menu--left">
       <aside class="aside">
         <div class="aside__top-container">
@@ -21,7 +22,7 @@
          <div class="aside-main">
            <ul class="aside-main__li-list">
              <li class="aside-main__item"><a href="" class="aside-main__link">Ремонт техники</a></li>
-             <li class="aside-main__item"><a href="" class="aside-main__link">Услуги и сервисы</a></li>
+             <li class="aside-main__item active"><a href="" class="aside-main__link">Услуги и сервисы</a></li>
              <li class="aside-main__item"><a href="" class="aside-main__link">Корпоративным клиент</a></li>
              <li class="aside-main__item"><a href="" class="aside-main__link">Продавцам техники</a></li>
              <li class="aside-main__item"><a href="" class="aside-main__link">Партнерам</a></li>
@@ -56,6 +57,24 @@
         </div>
       </aside>
     </div>
+
+    <div class="feedback">
+    <button class="round-button round-button--close"></button>
+      <form class="feedback__form">
+        <div class="feedback--container">
+          <label class="feedback__label">Обратная связь</label>
+            <input name="name" type="text" class="feedback__input" id="name" placeholder="Имя">
+            <input name="number" type="number" class="feedback__input" id="number" placeholder="Телефон">
+            <input name="email" type="email" class="feedback__input" id="email" placeholder="Электронная почта">
+            <textarea name="massage" class="feedback__input" id="massage" placeholder="Сообщение"></textarea>
+          <div class="consent">
+            <p class="consent__text">Нажимая “отправить”, вы даете согласие на <span>обработку</span> <span>персональных данных</span> и соглашаетесь с <span>нашей политикой конфиденциальности</span></p>
+          </div>
+          <button class="red-long-button" id="feedback__button">отправить</button>
+        </div>
+      </form>
+    </div>
+
     <div class="content">
     <header>
       <nav class="header">
@@ -67,14 +86,12 @@
           </button>
         </div>
         <div class="header__right-block header__right-block--style">
-          <div class="buttons-for-tablet">
-            <button name="call" class="round-button round-button--call">
+            <button name="call" class="round-button round-button--call button-for-tablet header--icon-margin">
             </button>
-            <button name="chat" class="round-button round-button--chat">
+            <button name="chat" class="round-button round-button--chat button-for-tablet header--icon-margin">
             </button>
-            <button name="profile" class="round-button round-button--profile">
+            <button name="profile" class="round-button round-button--profile button-for-tablet header--icon-margin">
             </button>
-          </div>
             <button name="repair" class="round-button round-button--repair header--icon-margin">
             </button>
             <button name="checkstatus" class="round-button round-button--checkstatus header--icon-margin">
@@ -308,7 +325,7 @@
                     <p class="service__name">Срок</p>
                     <p class="service__text">30-120 мин</p>
                   </div>
-                  <button class="price-button"><p>заказать</p></button>
+                  <button class="red-long-button"><p>заказать</p></button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -325,7 +342,7 @@
                     <p class="service__name">Срок</p>
                     <p class="service__text">30-120 мин</p>
                   </div>
-                  <button class="price-button"><p>заказать</p></button>
+                  <button class="red-long-button"><p>заказать</p></button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -342,7 +359,7 @@
                     <p class="service__name">Срок</p>
                     <p class="service__text">30-120 мин</p>
                   </div>
-                  <button class="price-button"><p>заказать</p></button>
+                  <button class="red-long-button"><p>заказать</p></button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -359,7 +376,7 @@
                     <p class="service__name">Срок</p>
                     <p class="service__text">30-120 мин</p>
                   </div>
-                  <button class="price-button"><p>заказать</p></button>
+                  <button class="red-long-button"><p>заказать</p></button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -376,7 +393,7 @@
                     <p class="service__name">Срок</p>
                     <p class="service__text">30-120 мин</p>
                   </div>
-                  <button class="price-button"><p>заказать</p></button>
+                  <button class="red-long-button"><p>заказать</p></button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -393,7 +410,7 @@
                     <p class="service__name">Срок</p>
                     <p class="service__text">30-120 мин</p>
                   </div>
-                  <button class="price-button"><p>заказать</p></button>
+                  <button class="red-long-button"><p>заказать</p></button>
                 </div>
               </div>
             </div>

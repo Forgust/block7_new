@@ -12,6 +12,9 @@
 
 .aside {
   box-shadow: -5px 0 50px;
+  @media (min-width: 1360px) {
+    box-shadow: none;
+  }
 }
 
 /* верхний блок */
@@ -62,11 +65,17 @@
 
 
 .aside-main__item:hover .aside-main__link,
-.aside-footer__link:hover {
+.aside-footer__link:hover,
+.aside-main__item.active {
   opacity: 0.5;
  }
 
 .aside-main__item:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.aside-main__item.active::before {
   opacity: 1;
   transform: scaleY(1);
 }
@@ -140,3 +149,9 @@
 .lang-switcher__link.active {
   opacity: 0.5;
 }
+
+ .round-button--close {
+    @media (min-width: 1360px) {
+      display: none;
+    }
+  }

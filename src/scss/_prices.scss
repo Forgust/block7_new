@@ -75,7 +75,7 @@
 
 
 // КНОПОЧКИ
-.price-button {
+.red-long-button {
     font-family: 'TTLakes-Medium';
     letter-spacing: -0.15px;
     grid-column: 2;
@@ -97,11 +97,11 @@
 
 
 
-.price-button p{
+.red-long-button p{
     transform: translateX(-10px);
 }
 
-.price-button::after {
+.red-long-button::after {
     content: "";
     background-image: url('../img/dropdown-white.svg');
     background-repeat: no-repeat;
