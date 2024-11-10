@@ -5,31 +5,37 @@ import './swipers';
 
 let headerRightBlock = document.querySelector('.header__right-block');
 
+let menuCallback = document.querySelector('.callback');
+let menuBurger = document.querySelector('.side-menu--left');
+let menuFeedback = document.querySelector('.feedback');
+
+let mainPage = document.querySelector('.content');
+
+let feedbackButton = headerRightBlock.querySelector('.round-button--chat');
+let callbackButton = headerRightBlock.querySelector('.round-button--call');
+let burgerButton = document.querySelector('.round-button--burger');
 
 let brandsMoreButton = document.querySelector('.brands__button');
 let devicesMoreButton = document.querySelector('.devices__button');
 
+let feedbackButtonBurger = menuBurger.querySelector('.round-button--chat');
+let callbackButtonBurger = menuBurger.querySelector('.round-button--call');
+
 let brandsList = document.querySelectorAll('.brands-slide');
 let devicesList = document.querySelectorAll('.devices-slide');
 
-let burgerButton = document.querySelector('.round-button--burger');
-let menuBurger =  document.querySelector('.side-menu--left');
-let menuFeedback = document.querySelector('.feedback');
-let mainPage = document.querySelector('.content');
-let closeButtonBurger = document.querySelector('.side-menu--left .round-button--close');
-let closeButtonFeedback = document.querySelector('.feedback .round-button--close')
-let feedbackButton = headerRightBlock.querySelector('.round-button--chat')
-console.log('feedbackButton' + feedbackButton.className);
 
+
+let closeButtonCallback = menuCallback.querySelector('.round-button--close');
+let closeButtonBurger = document.querySelector('.side-menu--left .round-button--close');
+let closeButtonFeedback = document.querySelector('.feedback .round-button--close');
+
+
+//закрыть открыть
 function openModal (modal) {
-  console.log(modal + 'Твой класс');
   modal.classList.toggle('open');
   mainPage.classList.toggle('close');
 }
-
-
-
-
 
 
 
@@ -56,21 +62,99 @@ devicesMoreButton.onclick = function () {
   showMore(devicesList, devicesMoreButton);
 }
 
-feedbackButton.onclick = function () {
+//Отзыв
+
+feedbackButton.addEventListener('click', function (e)  {
+  e.stopPropagation();
   openModal(menuFeedback);
-}
+});
 
-closeButtonFeedback.onclick = function () {
+closeButtonFeedback.addEventListener('click', function (e)  {
+  e.stopPropagation();
   openModal(menuFeedback);
-}
+});
 
-burgerButton.onclick = function () {
-  openModal(menuBurger);
-}
 
-closeButtonBurger.onclick = function () {
+document.addEventListener("click", function (e) {
+  const target = e.target;
+  const its_menu = target == menuFeedback || menuFeedback.contains(target);
+  const its_btnMenu = target == feedbackButton;
+  const menu_is_active = menuFeedback.classList.contains("open");
+
+  if (!its_menu && !its_btnMenu && menu_is_active) {
+    openModal(menuFeedback);
+  }
+});
+
+//колбек меню
+callbackButton.addEventListener('click', function (e)  {
+  e.stopPropagation();
+  openModal(menuCallback);
+});
+
+ 
+closeButtonCallback.addEventListener('click', function (e)  {
+  e.stopPropagation();
+  openModal(menuCallback);
+});
+
+document.addEventListener("click", function (e) {
+  const target = e.target;
+  const its_menu = target == menuCallback || menuCallback.contains(target);
+  const its_btnMenu = target == callbackButton;
+  const menu_is_active = menuCallback.classList.contains("open");
+
+  if (!its_menu && !its_btnMenu && menu_is_active) {
+    openModal(menuCallback);
+  }
+});
+
+
+//бургер меню
+burgerButton.addEventListener('click', function (e)  {
+  e.stopPropagation();
   openModal(menuBurger);
-}
+});
+
+closeButtonBurger.addEventListener('click', function (e)  {
+  e.stopPropagation();
+  openModal(menuBurger);
+});
+
+document.addEventListener("click", function (e) {
+  const target = e.target;
+  const its_menu = target == menuBurger || menuBurger.contains(target);
+  const its_btnMenu = target == burgerButton;
+  const menu_is_active = menuBurger.classList.contains("open");
+
+  if (!its_menu && !its_btnMenu && menu_is_active) {
+    openModal(menuBurger);
+  }
+  if (mainPage.classList.contains('close')) {
+    mainPage.classList.remove('close');
+    console.log('октрывает');
+  };
+  
+});
+
+
+//те же колбек и отзыв только в бургере
+callbackButtonBurger.addEventListener('click', function (e)  {
+  e.stopPropagation();
+  menuCallback.classList.toggle('open');
+  if (menuFeedback.classList.contains('open')) {
+    menuFeedback.classList.toggle('open')
+  }
+});
+
+feedbackButtonBurger.addEventListener('click', function (e)  {
+  e.stopPropagation();
+  menuFeedback.classList.toggle('open');
+  if (menuCallback.classList.contains('open')) {
+    menuCallback.classList.toggle('open')
+  }
+});
+
 
 
 function desctopHiden (slidsList) {

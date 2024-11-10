@@ -7,6 +7,7 @@
 @use 'prices';
 @use 'side-menu';
 @use 'feedback';
+@use 'callback';
 
 .body {
     @media (min-width: 1360px) {
@@ -18,8 +19,10 @@
     opacity: 1;
 }
 
+
 .content.close {
-    opacity: 0.2;
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 .side-menu--left {
@@ -37,11 +40,13 @@
     transform: translateX(0);
 }
 
-.feedback {
+.feedback,
+.callback {
     transform: translateX(600px);
 }
 
-.feedback.open {
+.feedback.open,
+.callback.open {
     box-shadow: 5px 0 40px 0 black;
     transform: translateX(0);
 }

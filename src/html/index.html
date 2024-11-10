@@ -64,13 +64,27 @@
         <div class="feedback--container">
           <label class="feedback__label">Обратная связь</label>
             <input name="name" type="text" class="feedback__input" id="name" placeholder="Имя">
-            <input name="number" type="number" class="feedback__input" id="number" placeholder="Телефон">
+            <input name="number" type="tel" class="feedback__input" id="number" placeholder="Телефон">
             <input name="email" type="email" class="feedback__input" id="email" placeholder="Электронная почта">
             <textarea name="massage" class="feedback__input" id="massage" placeholder="Сообщение"></textarea>
           <div class="consent">
-            <p class="consent__text">Нажимая “отправить”, вы даете согласие на <span>обработку</span> <span>персональных данных</span> и соглашаетесь с <span>нашей политикой конфиденциальности</span></p>
+            <p class="consent__text">Нажимая “отправить”, вы даете согласие на <a>обработку персональных данных</a> и соглашаетесь с <a>нашей политикой конфиденциальности</a></p>
           </div>
           <button class="red-long-button" id="feedback__button">отправить</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="callback">
+      <button class="round-button round-button--close"></button>
+      <form class="callback__form">
+        <div class="callback--container">
+          <label class="callback__label">Заказать звонок</label>
+            <input name="number" type="tel" class="feedback__input" id="number" placeholder="Телефон">
+          <div class="consent">
+            <p class="consent__text">Нажимая “отправить”, вы даете согласие на <a>обработку персональных данных</a> и соглашаетесь с <a>нашей политикой конфиденциальности</a></p>
+          </div>
+          <button class="red-long-button" id="callback__button">отправить</button>
         </div>
       </form>
     </div>

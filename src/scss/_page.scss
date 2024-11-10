@@ -180,7 +180,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 16px;
+  @media (min-width: 768px) {
+    padding: 16px;
+  }
 }
 
 .article__text {
@@ -188,6 +190,7 @@
   display: flex;
   flex-direction: column; 
   height: 8em;
+  padding: 8px;
 }
 
 .article__text p:first-child{
