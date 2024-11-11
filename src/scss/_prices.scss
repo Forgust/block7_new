@@ -88,7 +88,6 @@
     cursor: pointer;
     overflow: hidden;
     position: relative;
-
     @media (min-width: 768px) {
         grid-column: end;
         align-self: center;
@@ -99,6 +98,7 @@
 
 .red-long-button p{
     transform: translateX(-10px);
+    transition: all 200ms;
 }
 
 .red-long-button::after {
@@ -111,6 +111,7 @@
     width: 10px;
     top: 12px;
     right: 10px;
+    transition: all 200ms;
 }
 
 // ВНУТРЯНКА СЛАЙДА
@@ -157,6 +158,11 @@
     }
 }
 
+.prices-slide--header>p:not(:first-of-type) {
+    @media (min-width: 1120px) {
+        padding-left: 16%;
+    }
+}
 
 .service__text {
     line-height: 18px;
@@ -200,4 +206,16 @@
     height: 12px;
     right: -5px;
     bottom: -1.2px;
+}
+
+//еще чуть анимаций
+.red-long-button:hover {
+    &>p {
+        transform: translateX(-14px);
+    }
+    &::after {
+        background-repeat:repeat;
+        width: 20px;
+    }
+
 }

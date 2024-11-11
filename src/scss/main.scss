@@ -28,7 +28,7 @@
 .side-menu--left {
     z-index: 2;
     position: fixed;
-    transform: translateX(-600px);
+    transform: translateX(-1000px);
     transition: 1s;
     @media (min-width: 1360px) {
         transform: translateX(0);
@@ -40,9 +40,15 @@
     transform: translateX(0);
 }
 
+.side-menu--left.close {
+    opacity: 0.1;
+    pointer-events: none;
+}
+
 .feedback,
 .callback {
-    transform: translateX(600px);
+    z-index: 3;
+    transform: translateX(1000px);
 }
 
 .feedback.open,

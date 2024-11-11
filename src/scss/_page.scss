@@ -75,17 +75,18 @@
 .main__title {
   line-height: 40px;
   margin: 0;
+  display: flex;
+
 }
 
-.main__title::before {
+.main__title-container::before {
   content: "";
   position: absolute;
   display: block;
   background-color: #41F6D7;
   border-radius: 6px;
   height: 40px;
-  width: 16px;
-  left: -12px;
+  width: 4px;
 }
 
 .main__buttons {
@@ -192,6 +193,10 @@
   height: 8em;
   padding: 8px;
 }
+.article__text.max {
+  overflow-y: visible;
+  height: 100%;
+}
 
 .article__text p:first-child{
   padding-bottom: 20px;
@@ -232,6 +237,11 @@
   margin-right: 6px;
 }
 
+.read-more__text.reverse::before {
+  transform: scaleY(-1);
+}
+
+
 .read-more__text--style {
   font-family: "TTLakes-Regular";
   font-weight: 600;
@@ -247,6 +257,7 @@
   text-align: center;
   border-top: 1px solid #D9FFF5;
   height: 120px;
+  background-color: #F8F8F8;
 }
 
 .footer--text-style {

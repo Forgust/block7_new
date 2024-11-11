@@ -4,6 +4,7 @@ import '../html/index.html';
 import './swipers';
 
 let headerRightBlock = document.querySelector('.header__right-block');
+let articleText = document.querySelector('.article__text');
 
 let menuCallback = document.querySelector('.callback');
 let menuBurger = document.querySelector('.side-menu--left');
@@ -17,6 +18,7 @@ let burgerButton = document.querySelector('.round-button--burger');
 
 let brandsMoreButton = document.querySelector('.brands__button');
 let devicesMoreButton = document.querySelector('.devices__button');
+let readMoreButton = document.querySelector('.read-more__text');
 
 let feedbackButtonBurger = menuBurger.querySelector('.round-button--chat');
 let callbackButtonBurger = menuBurger.querySelector('.round-button--call');
@@ -54,6 +56,19 @@ function showMore (slidsList, button) {
   button.classList.toggle('reverse');
 }
 
+readMoreButton.onclick = function (event) {
+  event.preventDefault();
+  if (!articleText.classList.contains('max')) {
+    articleText.classList.add('max');
+    readMoreButton.textContent = 'Скрыть';
+  } else {
+    articleText.classList.remove('max');
+    readMoreButton.textContent = 'Читать далее';
+  }
+  readMoreButton.classList.toggle('reverse');
+}
+
+
 brandsMoreButton.onclick = function () {
   showMore(brandsList, brandsMoreButton);
 }
@@ -72,6 +87,7 @@ feedbackButton.addEventListener('click', function (e)  {
 closeButtonFeedback.addEventListener('click', function (e)  {
   e.stopPropagation();
   openModal(menuFeedback);
+  menuBurger.classList.remove('close');
 });
 
 
@@ -83,6 +99,7 @@ document.addEventListener("click", function (e) {
 
   if (!its_menu && !its_btnMenu && menu_is_active) {
     openModal(menuFeedback);
+    menuBurger.classList.remove('close');
   }
 });
 
@@ -96,6 +113,7 @@ callbackButton.addEventListener('click', function (e)  {
 closeButtonCallback.addEventListener('click', function (e)  {
   e.stopPropagation();
   openModal(menuCallback);
+  menuBurger.classList.remove('close');
 });
 
 document.addEventListener("click", function (e) {
@@ -106,6 +124,7 @@ document.addEventListener("click", function (e) {
 
   if (!its_menu && !its_btnMenu && menu_is_active) {
     openModal(menuCallback);
+    menuBurger.classList.remove('close');
   }
 });
 
@@ -118,22 +137,25 @@ burgerButton.addEventListener('click', function (e)  {
 
 closeButtonBurger.addEventListener('click', function (e)  {
   e.stopPropagation();
-  openModal(menuBurger);
+  menuBurger.classList.remove('open')
+  mainPage.classList.remove('close');
+  menuBurger.classList.remove('close');
 });
 
 document.addEventListener("click", function (e) {
   const target = e.target;
-  const its_menu = target == menuBurger || menuBurger.contains(target);
+  const its_menu = target == menuBurger || menuBurger.contains(target) || target == menuCallback || target == menuFeedback;
   const its_btnMenu = target == burgerButton;
   const menu_is_active = menuBurger.classList.contains("open");
-
+  console.log ('its_menu:' + its_menu + ', its_btnMenu:' + its_btnMenu + ', menu_is_active :' + menu_is_active);
   if (!its_menu && !its_btnMenu && menu_is_active) {
     openModal(menuBurger);
+    if (mainPage.classList.contains('close')) {
+      mainPage.classList.remove('close');
+      console.log('октрывает');
+    };
   }
-  if (mainPage.classList.contains('close')) {
-    mainPage.classList.remove('close');
-    console.log('октрывает');
-  };
+
   
 });
 
@@ -145,13 +167,21 @@ callbackButtonBurger.addEventListener('click', function (e)  {
   if (menuFeedback.classList.contains('open')) {
     menuFeedback.classList.toggle('open')
   }
+  if (window.innerWidth >= 1360) {
+    mainPage.classList.toggle('close');
+    menuBurger.classList.toggle('close');
+  }
 });
 
 feedbackButtonBurger.addEventListener('click', function (e)  {
   e.stopPropagation();
   menuFeedback.classList.toggle('open');
   if (menuCallback.classList.contains('open')) {
-    menuCallback.classList.toggle('open')
+    menuCallback.classList.toggle('open');
+  }
+  if (window.innerWidth >= 1360) {
+    mainPage.classList.toggle('close');
+    menuBurger.classList.toggle('close');
   }
 });
 
