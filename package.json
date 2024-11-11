@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "webpack --mode development",
+    "start": "webpack-dev-server --mode development --open",
+    "watch": "webpack --mode development --watch"
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +40,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
+    "gh-pages": "^6.2.0",
     "normalize.css": "^8.0.1",
     "swiper": "^11.1.14"
   }
